@@ -1,0 +1,21 @@
+# Acme Corp — Company Policy Manual
+
+## Section 4: Remote Work Policy
+
+Employees may work remotely up to three days per week. Remote work requires prior approval from the line manager. Employees working remotely must be reachable during core hours (10:00-16:00). The remote work arrangement must not affect productivity or collaboration.
+
+## Section 4.2: Remote Work Approval Process
+
+To request remote work, employees submit a request through the HR portal at least one week in advance. The line manager reviews the request within three business days. Approval is granted for a maximum of three consecutive months, after which a new request must be submitted.
+
+## Section 5: Vacation and Leave
+
+Employees receive 15 vacation days per year in their first two years of employment, increasing to 20 days after two years of service. Vacation requests must be submitted at least two weeks in advance. Sick leave is separate from vacation and does not count against the vacation balance.
+
+## Section 6: Travel and Expense Reimbursement
+
+Employees may claim reimbursement for approved business travel expenses. Reimbursable expenses include accommodation, meals up to $50 per day, and ground transportation. Receipts must be submitted within 30 days of the expense date. Travel bookings must be made through the approved corporate travel portal.
+
+## Section 7: Expense Approval Process
+
+Expense claims are reviewed by the finance team within 10 business days. Claims over $500 require additional approval from the department head. Claims submitted without receipts are automatically rejected.

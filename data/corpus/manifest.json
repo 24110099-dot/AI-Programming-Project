@@ -1,0 +1,98 @@
+[
+  {
+    "doc_id": "DOC0001",
+    "file": "DOC0001_company_policy.txt",
+    "title": "Company Policy Manual",
+    "version": "1.0",
+    "date": "TODO",
+    "owner": "Acme Corp HR",
+    "category": "policy",
+    "lang": "en",
+    "supersedes": null,
+    "source": "class corpus (resource week 8/data)"
+  },
+  {
+    "doc_id": "DOC0002",
+    "file": "DOC0002_it_helpdesk.txt",
+    "title": "IT Service Desk Knowledge Base",
+    "version": "1.0",
+    "date": "TODO",
+    "owner": "Northwind IT Service Desk",
+    "category": "it",
+    "lang": "en",
+    "supersedes": null,
+    "source": "class corpus (resource week 8/data)"
+  },
+  {
+    "doc_id": "DOC0003",
+    "file": "DOC0003_it_procurement.txt",
+    "title": "Procurement and Expense Rules",
+    "version": "1.0",
+    "date": "TODO",
+    "owner": "Northwind Procurement",
+    "category": "procurement",
+    "lang": "en",
+    "supersedes": null,
+    "source": "class corpus (resource week 8/data)"
+  },
+  {
+    "doc_id": "DOC0004",
+    "file": "DOC0004_global_offices.txt",
+    "title": "Global Office Directory",
+    "version": "1.0",
+    "date": "TODO",
+    "owner": "Northwind Facilities",
+    "category": "office",
+    "lang": "en",
+    "supersedes": null,
+    "source": "class corpus (resource week 8/data)"
+  },
+  {
+    "doc_id": "DOC0005",
+    "file": "DOC0005_international_work.txt",
+    "title": "International Work Policy (Section 8)",
+    "version": "1.0",
+    "date": "TODO",
+    "owner": "Acme Corp HR",
+    "category": "policy",
+    "lang": "en",
+    "supersedes": null,
+    "source": "class corpus (resource week 8/data)"
+  },
+  {
+    "doc_id": "DOC0006",
+    "file": "DOC0006_equipment_catalog.txt",
+    "title": "Equipment and Cost Reference",
+    "version": "1.0",
+    "date": "TODO",
+    "owner": "Northwind Procurement",
+    "category": "procurement",
+    "lang": "en",
+    "supersedes": null,
+    "source": "class corpus (resource week 8/data)"
+  },
+  {
+    "doc_id": "DOC0101",
+    "file": "TODO",
+    "title": "International Work Policy v2.0",
+    "version": "TODO",
+    "date": "TODO",
+    "owner": "TODO",
+    "category": "TODO",
+    "lang": "TODO",
+    "supersedes": "DOC0005",
+    "source": "written by our group"
+  },
+  {
+    "doc_id": "DOC0102",
+    "file": "TODO",
+    "title": "Request Procedures Handbook",
+    "version": "TODO",
+    "date": "TODO",
+    "owner": "TODO",
+    "category": "TODO",
+    "lang": "TODO",
+    "supersedes": null,
+    "source": "written by our group"
+  }
+]

@@ -1,0 +1,21 @@
+# Northwind Systems — IT Service Desk Knowledge Base
+
+## KB-01: Laptop Hardware Replacement
+
+Company laptops are replaced on a four-year cycle. Replacement is triggered automatically by the asset management system; employees do not need to submit a request. A damaged laptop is replaced immediately, regardless of where it sits in the cycle, after the service desk has verified the damage. Employees must return the old device within five working days of receiving the replacement.
+
+## KB-02: Software Licensing
+
+All paid software must be purchased through the procurement team using the Software Request form. Licences are assigned to a named employee and cannot be transferred to another employee without written approval from both line managers. Licences that are unused for 60 consecutive days are reclaimed automatically and returned to the available-licence pool.
+
+## KB-03: Personal Devices and BYOD
+
+Employees may install company-approved tools on a personal device only when the tool is already covered by a company licence and the device is enrolled in the device-management programme. The company does not reimburse hardware or software costs for personal devices. Internal documents classified Internal or above must not be stored on personal devices.
+
+## KB-04: Printing and Quota
+
+Each employee has a monthly printing quota of 200 pages. Colour printing requires a short justification in the print dialog. Prints that exceed the monthly quota are charged to the employee's department.
+
+## KB-05: Ticket Priorities and Response Targets
+
+P1 (critical) tickets describe a complete loss of a production service. P2 (high) tickets describe a degraded service. The target first-response time is 15 minutes for P1 and 2 hours for P2. Tickets that are not answered within the target time are escalated automatically to the on-call manager.

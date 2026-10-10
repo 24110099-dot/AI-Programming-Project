@@ -1,0 +1,28 @@
+[project]
+name = "policy-agent"
+version = "0.1.0"
+description = "Final Project AIPR - T1: policy assistant + actions (RAG + agent loop + MCP)"
+requires-python = ">=3.11"
+# Allowed libraries per the brief: mcp SDK, embedding lib, rank_bm25, numpy, pandas, python-docx.
+# Run `uv lock` on D1 and commit uv.lock so the instructor's machine gets the same versions.
+dependencies = [
+    "python-dotenv",
+    "groq",
+    "mcp[cli]>=2",            # course uses the v2 API: from mcp.server import MCPServer / from mcp import Client
+    "sentence-transformers",
+    "rank-bm25",
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "python-docx",
+]
+
+[dependency-groups]
+dev = ["pytest"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/policy_agent"]
