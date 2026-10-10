@@ -23,17 +23,18 @@ git status            # KIỂM TRA: không được thấy file .env trong danh 
 git add .
 git commit -m "chore: project skeleton, plan and class corpus"
 ```
-Lên GitHub tạo repo **Private** (không tick "Add README"), rồi:
+Lên GitHub tạo repo **Private** (không tick "Add README"), rồi copy **nguyên** link HTTPS ở mục *Quick setup* (dạng `https://github.com/<tên-tài-khoản>/<tên-repo>.git` — chỉ có 2 phần sau `github.com/`):
 ```powershell
-git remote add origin https://github.com/<C>/policy-agent.git
+git remote add origin https://github.com/24110099-dot/AI-Programming-Project.git
 git push -u origin main
 ```
+Lỡ gõ sai link: `git remote set-url origin <link-đúng>` (không dùng `remote add` lần nữa).
 GitHub → Settings → Collaborators → mời A và B.
 
 ### Bước 0.3 — Mỗi người (A, B, C) cài môi trường trên máy mình
 ```powershell
-git clone https://github.com/<C>/policy-agent.git     # A và B làm; C đã có sẵn
-cd policy-agent
+git clone https://github.com/24110099-dot/AI-Programming-Project.git     # A và B làm; C đã có sẵn
+cd AI-Programming-Project
 git config user.name  "Ten That Cua Ban"              # BẮT BUỘC đúng tên mình — GV đối chiếu commit
 git config user.email "email-github-cua-ban@..."
 uv --version                                           # chưa có: irm https://astral.sh/uv/install.ps1 | iex
