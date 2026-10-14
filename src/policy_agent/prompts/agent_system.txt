@@ -1,1 +1,0 @@
-# TODO (SV B): ReAct system prompt. Placeholders: $tool_descriptions, $today

@@ -1,33 +1,12 @@
-# One command for the instructor: make setup && make demo
-# Every target goes through `uv run`, so it works the same on Windows / macOS / Linux.
-# Windows without make: use .\tasks.ps1 <target> (same targets).
-
-.PHONY: setup index demo chat eval probe host2 test clean
-
-setup:
-	uv sync
-	uv run python -m policy_agent.rag.build_index
-
-index:
-	uv run python -m policy_agent.rag.build_index
-
-demo:
-	uv run python scripts/demo.py
-
-chat:
-	uv run python scripts/chat.py
-
-eval:
-	uv run python -m policy_agent.eval.run_eval
-
-probe:
-	uv run python scripts/probe_server.py
-
-host2:
-	uv run python scripts/second_host.py
-
+.PHONY: setup setup-env check-env test probe server
+setup: setup-env
+setup-env:
+	uv sync --locked
+check-env:
+	uv run --locked python scripts/check_environment.py
 test:
-	uv run pytest -q
-
-clean:
-	uv run python -c "import shutil; shutil.rmtree('data/index', ignore_errors=True)"
+	uv run --locked pytest -q tests/test_request_store.py tests/test_server.py tests/test_mcp_client.py tests/test_probe.py
+probe:
+	uv run --locked python scripts/probe_server.py
+server:
+	uv run --locked python -m policy_agent.mcp_server.server

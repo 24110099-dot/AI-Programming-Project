@@ -1,0 +1,6 @@
+TARGET check-env; exit=0
+Python: 3.11.16
+Executable: C:\Users\20huy\Desktop\AIPR-FINAL\AI-Programming-Project\.venv\Scripts\python.exe
+MCP: 2.3.0
+MCP v2 Client/MCPServer: ok
+Project imports: ok

@@ -1,0 +1,21 @@
+{
+  "embedded_files": 23,
+  "test_counts": {
+    "tests/test_mcp_client.py": 1,
+    "tests/test_probe.py": 1,
+    "tests/test_request_store.py": 27,
+    "tests/test_server.py": 8
+  },
+  "total_tests": 37,
+  "sdk": "2.3.0",
+  "raw_jsonrpc_responses": 8,
+  "write_get_disk_identical": true,
+  "limitations": [
+    "FAKE keyword retrieval",
+    "project-defined JSON details, DOC0102 source empty",
+    "single writer, no concurrency lock",
+    "full uv sync not rerun",
+    "GNU Make unavailable",
+    "no Git mutation"
+  ]
+}
