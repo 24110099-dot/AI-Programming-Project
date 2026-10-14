@@ -1,1 +1,0 @@
-# TODO (SV B/A): grounding rules — answer ONLY from tool results, cite [doc_id], prefer the latest version, refuse when not covered
