@@ -1,0 +1,13 @@
+# Acme Corp — International Work Policy v2.0 (Supersedes DOC0005 v1.0)
+
+## Section 8.1: Maximum Duration and Approval (v2.0)
+
+This policy version 2.0 (DOC0101, effective 2026-09-01) supersedes DOC0005 v1.0. Employees may work from a company office in another country for up to 21 consecutive days (reduced from 30 days in v1.0). International work requires prior approval from both the line manager and the HR business partner. Stays over 21 days require department head approval and a tax review.
+
+## Section 8.2: Submission Lead Time and Documentation (v2.0)
+
+Under version 2.0 (DOC0101), a request to work from another country (INTL_WORK) must be submitted at least 15 business days in advance of the start date (increased from 10 business days in DOC0005 v1.0). The request must state the destination country, the local office, the start and end dates, and the business reason.
+
+## Section 8.3: Regional Security and Compliance (v2.0)
+
+Working from another country requires notifying HR before travel for tax compliance. Employees visiting any APAC office (including Ho Chi Minh City) must configure the APAC-VPN profile, book a visitor desk, and submit a security review request before accessing production systems.

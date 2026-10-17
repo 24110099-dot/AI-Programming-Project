@@ -56,7 +56,7 @@ def search_policy(query: str, top_k: int = 3, category: str | None = None) -> st
     def action():
         if not isinstance(query, str) or not query.strip():
             raise ValueError("query must be nonblank")
-        if not isinstance(top_k, int) or not (1 <= top_k <= 5):
+        if type(top_k) is not int or not (1 <= top_k <= 5):
             raise ValueError("top_k must be 1..5")
         if category is not None and not isinstance(category, str):
             raise ValueError("category must be string or null")
@@ -73,10 +73,14 @@ def search_policy(query: str, top_k: int = 3, category: str | None = None) -> st
         # Neu co index RAG that thi su dung retriever
         if index_file.exists():
             try:
-                from policy_agent.rag.retriever import retrieve
-                hits = retrieve(query, top_k=top_k, category=category)
+                from policy_agent.rag.retriever import format_chunk_hit, retrieve
+                hits = retrieve(query, top_k=top_k, category=category, index_path=index_file)
                 if hits:
-                    return "\n".join(hits)
+                    lines = [
+                        format_chunk_hit(item[0], item[1]) if isinstance(item, tuple) else str(item)
+                        for item in hits
+                    ]
+                    return "\n".join(lines)
                 return "No relevant passages found in company policies."
             except Exception as e:
                 logger.warning("Retriever that bi loi, fallback demo: %s", e)
@@ -106,24 +110,33 @@ def get_document(doc_id: str) -> str:
         settings = load_settings()
         corpus_dir = settings.corpus_dir
         if corpus_dir and corpus_dir.exists():
-            manifest = {}
+            manifest_map = {}
             man_file = corpus_dir / "manifest.json"
             if man_file.exists():
                 try:
-                    manifest = json.loads(man_file.read_text(encoding="utf-8"))
+                    raw_man = json.loads(man_file.read_text(encoding="utf-8"))
+                    if isinstance(raw_man, list):
+                        manifest_map = {
+                            row["doc_id"]: row
+                            for row in raw_man
+                            if isinstance(row, dict) and "doc_id" in row
+                        }
+                    elif isinstance(raw_man, dict):
+                        manifest_map = raw_man
                 except Exception:
                     pass
 
             # Tim file theo ma doc_id (VD: DOC0001_company_policy.txt)
-            for f in corpus_dir.glob(f"{doc_id}*.txt"):
+            for f in corpus_dir.glob(f"{doc_id}_*.txt"):
                 text = f.read_text(encoding="utf-8")
-                meta = manifest.get(doc_id, {})
+                meta = manifest_map.get(doc_id, {})
                 doc_payload = {
                     "doc_id": doc_id,
                     "title": meta.get("title", f.stem),
                     "version": meta.get("version", "1.0"),
                     "date": meta.get("date", "2026-01-01"),
                     "owner": meta.get("owner", "HR"),
+                    "supersedes": meta.get("supersedes"),
                     "content": text[:3500],
                 }
                 return json.dumps(doc_payload, ensure_ascii=False)[:4000]

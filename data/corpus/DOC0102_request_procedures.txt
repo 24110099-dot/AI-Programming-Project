@@ -1,0 +1,13 @@
+# Northwind & Acme — Request Procedures Handbook and Equipment Price List
+
+## RP-01: Work Arrangement Requests (REMOTE_WORK and INTL_WORK)
+
+REMOTE_WORK requests require employee name, start_date, end_date, and JSON details containing nonblank "reason" and "location". INTL_WORK requests require employee name, start_date, end_date, and JSON details containing nonblank "reason", "country", and "office". All dates must use ISO format YYYY-MM-DD with start_date <= end_date.
+
+## RP-02: Procurement, Expense, and Security Requests
+
+HARDWARE_PURCHASE requests require JSON details with nonblank "reason" and "item". EXPENSE_CLAIM requests require JSON details with nonblank "reason", "currency", "receipt", and a finite positive numeric "amount". SECURITY_REVIEW requests require JSON details with nonblank "reason", "system", and "scope". Every created request must be verified immediately via get_request.
+
+## RP-03: Official Equipment Price List
+
+Unit prices for the standard equipment catalog (referenced in DOC0006): Standard Developer Laptop is $850; USB-C Docking Station is $120; Noise-Cancelling Headset is $80; Universal Power Adapter is $45; Dell UltraSharp 27-inch Monitor (U2723QE) is $480; Ergonomic Mechanical Keyboard is $110. Combined purchases over $1,000 require department head approval (DOC0003, DOC0006).
