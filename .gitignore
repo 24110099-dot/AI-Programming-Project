@@ -17,3 +17,13 @@ logs/server.log
 # editors
 .vscode/
 .idea/
+
+# reference materials (specs and lecture notes)
+docs/request/
+docs/lecture-notes/
+data/CTXH.md
+data/HTRL.md
+
+# internal planning files (not for submission)
+plan/
+temp_*/
