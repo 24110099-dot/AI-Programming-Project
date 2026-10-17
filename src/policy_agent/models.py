@@ -1,4 +1,3 @@
-"""Shared data contracts; no embedding, persistence, or agent execution."""
 from dataclasses import dataclass, field
 from datetime import date
 from types import UnionType
@@ -6,7 +5,6 @@ from typing import Any, Literal, get_args, get_origin, get_type_hints
 
 
 def _matches(value: Any, annotation: Any) -> bool:
-    """Check annotated containers while leaving payload values opaque."""
     origin = get_origin(annotation)
     args = get_args(annotation)
     if annotation is Any:
@@ -27,8 +25,6 @@ def _matches(value: Any, annotation: Any) -> bool:
 
 
 class _Validated:
-    """Validate constructor types, not later mutation or business policy."""
-
     def __post_init__(self) -> None:
         for name, annotation in get_type_hints(type(self)).items():
             if not _matches(getattr(self, name), annotation):
@@ -39,8 +35,6 @@ class _Validated:
 
 @dataclass
 class DocumentMetadata(_Validated):
-    """Manifest provenance; mandatory fields and ISO date are validated."""
-
     doc_id: str
     title: str
     version: str
@@ -63,21 +57,16 @@ class DocumentMetadata(_Validated):
 
 @dataclass
 class Document(_Validated):
-    """Source text plus typed provenance; doc_id is read from metadata."""
-
     content: str
     metadata: DocumentMetadata
 
     @property
     def doc_id(self) -> str:
-        """Return the canonical manifest identifier."""
         return self.metadata.doc_id
 
 
 @dataclass
 class DocumentChunk(_Validated):
-    """Retrieval unit; an empty embedding means not yet embedded."""
-
     chunk_id: str
     content: str
     metadata: DocumentMetadata
@@ -86,8 +75,6 @@ class DocumentChunk(_Validated):
 
 @dataclass
 class ToolSpec(_Validated):
-    """Normalized discovered tool; SDK inputSchema maps to input_schema."""
-
     name: str
     description: str
     input_schema: dict[str, Any] = field(default_factory=dict)
@@ -95,8 +82,6 @@ class ToolSpec(_Validated):
 
 @dataclass
 class ParsedAction(_Validated):
-    """Parser result: one tool call, final answer, or recoverable error."""
-
     kind: Literal["action", "final", "error"]
     tool_name: str | None = None
     args: dict[str, Any] = field(default_factory=dict)
@@ -118,8 +103,6 @@ class ParsedAction(_Validated):
 
 @dataclass
 class StepTrace(_Validated):
-    """One plan-compatible observation record, not a tool executor."""
-
     thought: str = ""
     action: str | None = None
     args: dict[str, Any] = field(default_factory=dict)
@@ -128,8 +111,6 @@ class StepTrace(_Validated):
 
 @dataclass
 class Usage(_Validated):
-    """Explicit counters supplied by the future LLM client."""
-
     calls: int = 0
     prompt_tokens: int = 0
     completion_tokens: int = 0
@@ -143,8 +124,6 @@ class Usage(_Validated):
 
 @dataclass
 class RunTrace(_Validated):
-    """Serializable run data matching PLAN.md; caller supplies timestamp."""
-
     timestamp: str
     question: str
     steps: list[StepTrace] = field(default_factory=list)
@@ -155,8 +134,6 @@ class RunTrace(_Validated):
 
 @dataclass
 class ProcedureRequest(_Validated):
-    """Proposed persisted record; C owns policy validation and write/verify."""
-
     request_id: str
     request_type: str
     employee: str

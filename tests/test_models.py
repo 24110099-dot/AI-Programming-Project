@@ -108,3 +108,4 @@ def test_empty_embedding_is_not_computed_and_numeric_values_are_preserved():
     chunk = models.DocumentChunk("c", "", metadata(), embedding=[1, 0.5])
     assert chunk.embedding == [1, 0.5]
     assert models.DocumentChunk("c", "", metadata()).embedding == []
+
