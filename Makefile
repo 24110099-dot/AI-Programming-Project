@@ -20,7 +20,7 @@ chat:
 	uv run python scripts/chat.py
 
 eval:
-	uv run python -m policy_agent.eval.run_eval
+	uv run python -m policy_agent.eval.run_eval --mode both
 
 probe:
 	uv run python scripts/probe_server.py

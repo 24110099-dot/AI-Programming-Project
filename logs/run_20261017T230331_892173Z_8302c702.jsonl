@@ -1,0 +1,5 @@
+{"event": "START", "timestamp": "2026-10-17T23:03:31.892173+00:00", "question": "Mức lương thử việc và mức đóng bảo hiểm xã hội bắt buộc của nhân viên mới là bao nhiêu phần trăm?"}
+{"event": "STEP", "step": 1, "thought": "Tôi cần tra cứu thông tin về mức lương thử việc và tỷ lệ đóng bảo hiểm xã hội bắt buộc cho nhân viên mới.", "action": "search_policy", "args": {"query": "mức lương thử việc và tỷ lệ đóng bảo hiểm xã hội bắt buộc nhân viên mới", "top_k": 5}, "observation": "No relevant passages found in company policies."}
+{"event": "STEP", "step": 2, "thought": "", "action": null, "args": {}, "observation": "Error: run exception RateLimitError"}
+{"event": "FINAL", "final_answer": "Không hoàn tất lượt chạy; hãy kiểm tra trace lỗi.", "cited_doc_ids": []}
+{"event": "USAGE", "calls": 8, "prompt_tokens": 1382, "completion_tokens": 68, "max_prompt": 1382}

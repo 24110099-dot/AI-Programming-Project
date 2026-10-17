@@ -20,6 +20,10 @@ dependencies = [
 [dependency-groups]
 dev = ["pytest"]
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["temp_*", "plan", ".git", ".venv"]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

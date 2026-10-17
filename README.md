@@ -2,8 +2,6 @@
 
 Hỏi quy chế → làm thủ tục → xác nhận. RAG (dense + hybrid BM25) + agent loop tự viết + MCP server (stdio).
 
-> 🚧 Khung README — hoàn thiện ở D9 (cold start test). Kế hoạch: [PLAN.md](PLAN.md).
-
 ## Yêu cầu
 - Python 3.11+
 - [uv](https://docs.astral.sh/uv/) (`uv --version`)
@@ -28,7 +26,7 @@ Windows không có `make`: `.\tasks.ps1 setup; .\tasks.ps1 demo`
 
 ## Cấu trúc
 ```
-data/corpus/        DOC0001–0006 (lớp) + DOC0101–0103 (nhóm viết) + manifest.json
+data/corpus/        DOC0001–0006 (lớp) + DOC0101–0102 (nhóm viết) + manifest.json
 src/policy_agent/   llm/ rag/ agent/ mcp_server/ mcp_client/ eval/ prompts/
 scripts/            demo, chat, probe_server, second_host
 tests/              testset.jsonl + unit tests
@@ -37,8 +35,9 @@ report/             report.docx, sơ đồ kiến trúc
 ```
 
 ## Thành viên
-| SV | MSSV | Phần phụ trách |
-|---|---|---|
-| A | | RAG & dữ liệu |
-| B | | Agent & LLM |
-| C | | MCP & Eval |
+| SV | Họ và tên | MSSV | Phần phụ trách |
+|---|---|---|---|
+| A | Huỳnh Nhật Bảo | 24110079 | RAG & dữ liệu (`rag/`, `data/corpus/`) |
+| B | Ngô Quang Trường | 24110142 | Agent & LLM (`agent/`, `llm/`, `mcp_client/`, `scripts/`) |
+| C | Nguyễn Quốc Bảo Khang | 24110099 | MCP Server & Eval (`mcp_server/`, `eval/`, `testset.jsonl`) |
+

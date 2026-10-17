@@ -10,6 +10,7 @@ def write_csv(records: list[dict], output_path: Path):
     output_path.parent.mkdir(parents=True, exist_ok=True)
     fields = [
         "id",
+        "mode",
         "type",
         "question",
         "passed",
@@ -21,6 +22,7 @@ def write_csv(records: list[dict], output_path: Path):
         "completion_tokens",
         "total_tokens",
         "llm_calls",
+        "latency_sec",
         "refusal_reason",
         "final_answer",
     ]

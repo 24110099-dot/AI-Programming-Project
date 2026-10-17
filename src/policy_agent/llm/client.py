@@ -72,8 +72,19 @@ def call_llm(messages, settings, usage: Usage, *, adapter=None, timeout=30.0, ma
                 f.write(json.dumps(log_entry) + "\n")
             if not should_retry:
                 raise
-            base_delay = 0.5 if sleep is not time.sleep else 3.0
-            delay = base_delay * (2 ** (attempt - 1))
+            if sleep is not time.sleep:
+                delay = 0.5 * (2 ** (attempt - 1))
+            else:
+                retry_after = None
+                if getattr(e, "response", None) is not None:
+                    retry_after = e.response.headers.get("retry-after")
+                if retry_after is not None:
+                    try:
+                        delay = min(float(retry_after) + 1.0, 15.0)
+                    except ValueError:
+                        delay = min(5.0 * (2 ** (attempt - 1)), 15.0)
+                else:
+                    delay = min(5.0 * (2 ** (attempt - 1)), 15.0)
             sleep(delay)
             continue
 

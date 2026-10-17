@@ -1,0 +1,4 @@
+{"event": "START", "timestamp": "2026-10-17T23:05:19.032824+00:00", "question": "Chế độ nghỉ thai sản và trợ cấp dành cho lao động nam khi vợ sinh con được quy định cụ thể ra sao?"}
+{"event": "STEP", "step": 1, "thought": "", "action": null, "args": {}, "observation": "Error: run exception RateLimitError"}
+{"event": "FINAL", "final_answer": "Không hoàn tất lượt chạy; hãy kiểm tra trace lỗi.", "cited_doc_ids": []}
+{"event": "USAGE", "calls": 6, "prompt_tokens": 0, "completion_tokens": 0, "max_prompt": 0}

@@ -50,7 +50,7 @@ async def run_agent(question: str, tool_client=None, provider=None, settings=Non
     if provider is None:
         from policy_agent.llm.client import call_llm
         def default_provider(msgs, usage):
-            return call_llm(msgs, settings, usage)
+            return call_llm(msgs, settings, usage, max_attempts=6)
         provider = default_provider
     if tool_client is None:
         from policy_agent.mcp_client.client import MCPToolClient

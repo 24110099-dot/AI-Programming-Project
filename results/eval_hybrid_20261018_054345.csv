@@ -1,0 +1,116 @@
+﻿id,mode,type,question,passed,faithfulness,citation_hit,refusal_correct,action_success,prompt_tokens,completion_tokens,total_tokens,llm_calls,latency_sec,refusal_reason,final_answer
+Q01,hybrid,direct,"Theo quy định của công ty, mức hoàn tiền ăn uống tối đa cho nhân viên là bao nhiêu mỗi ngày khi đi công tác?",False,1.0,0.0,True,True,3090,258,3348,2,16.25,Tra loi hop le,"Theo quy định của công ty, mức hoàn tiền ăn uống tối đa cho nhân viên khi đi công tác là **$50 mỗi ngày** [DOC0006], [DOC0003].
+
+Lưu ý thêm:
+- Hóa đơn ăn uống phải được nộp trong vòng 30 ngày kể từ ngày phát sinh chi phí [DOC0003].
+- Các khoản chi khác khi đi công tác: lưu trú tối đa $160/đêm, phương tiện đi lại trên mặt đất được hoàn khi có hóa đơn [DOC0006]."
+Q02,hybrid,direct,Chính sách làm việc từ xa (remote work) cho phép nhân viên làm việc tại nhà tối đa bao nhiêu ngày mỗi tuần?,True,1.0,1.0,True,True,3173,339,3512,4,27.06,Tra loi hop le,"Theo chính sách làm việc từ xa hiện hành, nhân viên được phép làm việc tại nhà tối đa **3 ngày mỗi tuần** [DOC0001].
+
+Một số điều kiện kèm theo:
+- Cần có sự phê duyệt trước từ quản lý trực tiếp (line manager) [DOC0001].
+- Nhân viên làm việc từ xa phải đảm bảo liên lạc được trong khung giờ cốt lõi từ 10:00 đến 16:00 [DOC0001].
+- Việc làm việc từ xa không được ảnh hưởng đến năng suất làm việc hoặc khả năng phối hợp nhóm [DOC0001].
+- Hồ sơ xin làm việc từ xa cần được nộp qua cổng HR ít nhất 1 tuần trước, và thời hạn phê duyệt tối đa là 3 tháng liên tục [DOC0001]."
+Q03,hybrid,synthesis,Tôi muốn sang làm việc tại văn phòng TP.HCM trong 2 tuần thì cần những cấp phê duyệt nào và cần hoàn thành các thủ tục IT nào?,True,1.0,1.0,True,True,8696,1049,9745,8,76.03,Tra loi hop le,"Để làm việc tại văn phòng TP.HCM trong 2 tuần (14 ngày), bạn cần tuân thủ các quy định sau:
+
+**1. Cấp phê duyệt:**
+- **Line Manager** và **HR Business Partner** phải phê duyệt trước [DOC0101].
+- Thời gian 2 tuần (14 ngày) nằm trong giới hạn tối đa 21 ngày liên tiếp, nên không cần phê duyệt thêm từ Department Head hay tax review [DOC0101].
+- Nếu bạn đang làm việc ở nước ngoài và sang TP.HCM, cần thông báo cho HR trước chuyến đi để tuân thủ quy định về thuế [DOC0101].
+
+**2. Thủ tục IT bắt buộc:**
+- **Cấu hình APAC-VPN profile** trên thiết bị [DOC0004, DOC0101].
+- **Đăng ký thiết bị** vào chương trình quản lý thiết bị (device-management programme) [DOC0004].
+- **Đặt bàn làm việc (visitor desk)** trong hệ thống, phải đặt trước ít nhất **5 ngày làm việc** so với ngày đến. Nếu không xác nhận lại 48 giờ trước khi đến, chỗ ngồi sẽ bị hủy tự động [DOC0004].
+- **Phê duyệt truy cập mạng cục bộ và phân bổ bàn** từ Facilities Owner và IT Owner của văn phòng TP.HCM [DOC0004].
+- Nếu cần **truy cập hệ thống production**, bạn phải nộp yêu cầu **security review** qua IT service desk trước khi truy cập [DOC0004, DOC0101].
+
+**3. Lưu ý thêm:**
+- Vé đi lại phải đặt qua **corporate travel portal** [DOC0003].
+- Chi phí ăn uống được hoàn lại tối đa $50/ngày, hóa đơn phải nộp trong vòng 30 ngày [DOC0003]."
+Q04,hybrid,synthesis,"Để được mua màn hình rời và phụ kiện công thái học cho nhân viên làm việc từ xa, điều kiện cần là gì và ai có thẩm quyền phê duyệt chi phí?",True,1.0,1.0,True,True,8270,864,9134,8,70.43,Tra loi hop le,"Theo quy chế hiện hành, để được mua màn hình rời và phụ kiện công thái học cho nhân viên làm việc từ xa, các điều kiện và thẩm quyền phê duyệt như sau:
+
+1. **Điều kiện cần**:
+   - Nhân viên phải được phê duyệt làm việc từ xa (remote work) bởi Line Manager [DOC0001].
+   - Thiết bị mua phải nằm trong danh mục thiết bị chuẩn của công ty (ví dụ: Màn hình Dell UltraSharp 27-inch, Bàn phím cơ công thái học) [DOC0102].
+
+2. **Thẩm quyền phê duyệt chi phí**:
+   - **Dưới $1,000**: Được phê duyệt bởi **Team Lead** [DOC0003], [DOC0006].
+   - **Trên $1,000**: Được phê duyệt bởi **Department Head** [DOC0003], [DOC0006].
+
+*Lưu ý: Ví dụ, nếu mua Màn hình Dell UltraSharp 27-inch ($480) và Bàn phím cơ công thái học ($110), tổng chi phí là $590, thuộc thẩm quyền phê duyệt của Team Lead. Nếu tổng giá trị các thiết bị mua cùng lúc vượt quá $1,000, bắt buộc phải có phê duyệt từ Department Head [DOC0102].*"
+Q05,hybrid,version_conflict,"Theo chính sách quốc tế mới nhất, nhân viên được phép làm việc tại văn phòng nước ngoài tối đa bao nhiêu ngày làm việc liên tục?",True,1.0,1.0,True,True,3189,395,3584,5,29.15,Tra loi hop le,"Theo chính sách làm việc quốc tế mới nhất (DOC0101 v2.0, hiệu lực từ 2026-09-01, thay thế DOC0005 v1.0), nhân viên được phép làm việc tại văn phòng công ty ở nước ngoài **tối đa 21 ngày liên tục** [DOC0101].
+
+Lưu ý thêm:
+- Mức này đã được giảm từ 30 ngày liên tục trong bản cũ (DOC0005 v1.0) [DOC0101].
+- Việc làm việc quốc tế yêu cầu phải có sự phê duyệt trước từ cả quản lý trực tiếp (line manager) và đối tác kinh doanh nhân sự (HR business partner) [DOC0101].
+- Đơn xin (INTL_WORK) phải được nộp trước ít nhất 15 ngày làm việc so với ngày bắt đầu, và cần nêu rõ quốc gia đến, văn phòng địa phương, ngày bắt đầu/kết thúc và lý do công việc [DOC0101]."
+Q06,hybrid,version_conflict,Hạn nộp đơn đăng ký làm việc tại văn phòng nước ngoài là trước chuyến đi bao nhiêu ngày làm việc theo quy định mới nhất?,True,1.0,1.0,True,True,3358,379,3737,5,26.32,Tra loi hop le,"Theo quy định mới nhất (tài liệu DOC0101 v2.0, hiệu lực từ 2026-09-01, thay thế bản cũ DOC0005 v1.0), đơn đăng ký làm việc tại văn phòng nước ngoài (INTL_WORK) phải được nộp **trước ngày bắt đầu chuyến đi ít nhất 15 ngày làm việc** [DOC0101].
+
+Lưu ý thêm:
+- Quy định này tăng lên từ mức 10 ngày làm việc trong bản cũ (DOC0005 v1.0) [DOC0101].
+- Đơn đăng ký cần nêu rõ: quốc gia đến, văn phòng địa phương, ngày bắt đầu và kết thúc, và lý do công việc [DOC0101].
+- Chuyến đi cần được phê duyệt trước bởi cả quản lý trực tiếp (line manager) và đối tác kinh doanh nhân sự (HR business partner) [DOC0101]."
+Q07,hybrid,calculation,"Tôi muốn đặt mua một laptop giá $850, dock chuyển đổi $120 và tai nghe chống ồn $80. Tổng số tiền là bao nhiêu và cấp nào có thẩm quyền duyệt đơn này?",True,0.6667,0.5,True,True,3140,321,3461,5,27.05,Tra loi hop le,"Tổng số tiền cho đơn hàng của bạn là:
+- Laptop: $850
+- Dock chuyển đổi: $120
+- Tai nghe chống ồn: $80
+**Tổng cộng: $1,050**
+
+Theo quy chế mua sắm phần cứng (PR-02), các khoản mua sắm phần cứng có giá trị **trên $1,000** yêu cầu phải được phê duyệt bởi **trưởng phòng (department head)** trước khi đặt hàng [DOC0003].
+
+Vì tổng đơn hàng của bạn là $1,050 (vượt quá ngưỡng $1,000), đơn này cần được **trưởng phòng** phê duyệt.
+
+Lưu ý thêm: Tất cả các khoản mua sắm phải được ghi vào sổ đăng ký tài sản (asset register) trong vòng ba ngày làm việc kể từ khi nhận hàng [DOC0003]."
+Q08,hybrid,action,"Tôi là Alice, muốn làm việc từ xa tại nhà từ ngày 2026-11-02 đến 2026-11-06 vì lý do việc gia đình. Hãy tính số ngày làm việc và tạo đơn REMOTE_WORK giúp tôi.",True,0.8667,0.5,True,True,7789,931,8720,8,67.5,Tra loi hop le,"Đã xác minh REQ-ed786857d349433790b643d1c9227d5d. Chào Alice, tôi đã hỗ trợ bạn hoàn tất các bước như sau:
+
+**1. Số ngày làm việc:**
+Khoảng thời gian từ 2026-11-02 đến 2026-11-06 có **5 ngày làm việc** (Thứ Hai đến Thứ Sáu).
+
+**2. Đơn REMOTE_WORK đã được tạo và xác minh thành công:**
+- **Request ID:** REQ-ed786857d349433790b643d1c9227d5d
+- **Loại đơn:** REMOTE_WORK
+- **Nhân viên:** Alice
+- **Lý do:** việc gia đình
+- **Địa điểm:** nhà
+- **Thời gian:** 2026-11-02 → 2026-11-06
+- **Trạng thái:** submitted (đã gửi)
+
+**3. Lưu ý quan trọng về quy chế [DOC0001]:**
+- Theo quy chế làm việc từ xa, nhân viên chỉ được làm việc từ xa **tối đa 3 ngày/tuần** [DOC0001].
+- Yêu cầu của bạn là **5 ngày làm việc liên tiếp trong cùng một tuần**, vượt quá giới hạn 3 ngày/tuần.
+- Đơn yêu cầu phải được gửi qua HR portal **ít nhất 1 tuần trước** ngày bắt đầu, và line manager sẽ xem xét trong vòng 3 ngày làm việc [DOC0001].
+- Khi làm việc từ xa, bạn phải có mặt trong khung giờ cốt lõi **10:00–16:00** [DOC0001].
+
+**Khuyến nghị:** Do yêu cầu 5 ngày vượt quá hạn mức 3 ngày/tuần, đơn của bạn có thể bị từ chối hoặc yêu cầu điều chỉnh. Bạn nên trao đổi với line manager để xem có thể chia nhỏ lịch làm việc từ xa (ví dụ: 3 ngày từ xa + 2 ngày tại văn phòng) hoặc xin ngoại lệ nếu có lý do đặc biệt."
+Q09,hybrid,action,"Tôi là Bob, cần đặt mua màn hình Dell UltraSharp 27 inch cho dự án AI. Hãy tạo đơn mua thiết bị HARDWARE_PURCHASE giúp tôi.",True,1.0,0.5,True,True,5431,487,5918,6,46.01,Tra loi hop le,"Đã xác minh REQ-d3095ff957274cdc89e879ccf8586bea. Đã tạo thành công đơn mua thiết bị HARDWARE_PURCHASE cho bạn Bob.
+
+**Thông tin đơn:**
+- **Mã đơn:** REQ-d3095ff957274cdc89e879ccf8586bea
+- **Loại đơn:** HARDWARE_PURCHASE
+- **Nhân viên:** Bob
+- **Thiết bị:** Màn hình Dell UltraSharp 27 inch
+- **Lý do:** Cần mua màn hình cho dự án AI
+- **Trạng thái:** submitted (đã gửi)
+
+**Lưu ý về quy trình phê duyệt:**
+Theo quy chế, các khoản mua sắm thiết bị có giá trị **trên $1,000** cần được phê duyệt bởi Trưởng phòng (department head), còn các khoản **dưới $1,000** do Team lead phê duyệt [DOC0003], [DOC0006]. Bạn cần cung cấp thêm thông tin về giá của màn hình để xác định đúng người phê duyệt.
+
+Ngoài ra, sau khi nhận hàng, thiết bị phải được ghi vào sổ tài sản (asset register) trong vòng 3 ngày làm việc [DOC0003], [DOC0006]."
+Q10,hybrid,insufficient,"Tôi vừa đi công tác về, chi phí ăn uống và đi lại của tôi có được công ty chi trả toàn bộ hay không?",True,1.0,1.0,True,True,3121,450,3571,4,26.3,Tu choi dung,"Chi phí công tác của bạn **không được chi trả toàn bộ** mà được hoàn theo các hạn mức cụ thể sau:
+
+- **Ăn uống (Meals):** Hoàn tối đa **$50/ngày** [DOC0006], [DOC0001].
+- **Đi lại (Ground transport):** Được hoàn **có hóa đơn** (không giới hạn mức cố định, nhưng bắt buộc phải có hóa đơn) [DOC0006], [DOC0001].
+- **Lưu trú (Lodging):** Hoàn tối đa **$160/đêm** [DOC0006].
+
+**Lưu ý quan trọng:**
+- Hóa đơn phải được nộp trong vòng **30 ngày** kể từ ngày phát sinh chi phí [DOC0001].
+- Các đặt chỗ đi lại (vé máy bay, khách sạn...) phải được thực hiện qua **cổng du lịch doanh nghiệp được phê duyệt** (approved corporate travel portal) [DOC0001].
+
+Vì vậy, phần chi phí ăn uống vượt quá $50/ngày sẽ không được hoàn, còn chi phí đi lại cần có hóa đơn hợp lệ để được thanh toán."
+Q11,hybrid,no_answer,Chính sách thưởng cổ phiếu ESOP và thời gian vesting của công ty được tính toán chi tiết như thế nào?,True,1.0,1.0,True,True,4508,326,4834,6,38.7,Tu choi dung,"Xin lỗi, theo hệ thống tài liệu quy chế hiện tại của công ty, không có thông tin nào liên quan đến chính sách thưởng cổ phiếu ESOP hay thời gian vesting. Đây có thể là nội dung thuộc phạm vi nhân sự/tài chính chuyên biệt chưa được đưa vào kho tài liệu quy chế nội bộ mà tôi có quyền truy cập.
+
+Bạn vui lòng liên hệ trực tiếp với bộ phận Nhân sự (HR) hoặc Phòng Tài chính để được cung cấp thông tin chi tiết về chính sách ESOP và lịch vesting."
+Q12,hybrid,no_answer,Quy định về trang phục công sở (dress code) vào ngày thứ Sáu tại công ty là gì?,True,1.0,1.0,True,True,2855,200,3055,4,24.69,Tu choi dung,"Xin lỗi, quy chế nội bộ hiện tại của công ty không có thông tin về quy định trang phục công sở (dress code) vào ngày thứ Sáu. Vui lòng liên hệ bộ phận Nhân sự (HR) hoặc quản lý trực tiếp để được hỗ trợ thêm về vấn đề này."
+Q13,hybrid,no_answer,Mức lương thử việc và mức đóng bảo hiểm xã hội bắt buộc của nhân viên mới là bao nhiêu phần trăm?,True,1.0,1.0,True,True,6539,338,6877,10,107.14,Tu choi dung,"Xin lỗi, quy chế nội bộ hiện tại không có thông tin về mức lương thử việc và tỷ lệ đóng bảo hiểm xã hội bắt buộc cho nhân viên mới. Vui lòng liên hệ bộ phận Nhân sự (HR) để được hỗ trợ chi tiết về các vấn đề liên quan đến lương và bảo hiểm."
+Q14,hybrid,no_answer,Chế độ nghỉ thai sản và trợ cấp dành cho lao động nam khi vợ sinh con được quy định cụ thể ra sao?,True,1.0,1.0,True,True,2866,237,3103,2,66.43,Tu choi dung,"Xin lỗi, quy chế nội bộ hiện tại của công ty không có thông tin về chế độ nghỉ thai sản và trợ cấp dành cho lao động nam khi vợ sinh con. Đây là nội dung thuộc phạm vi pháp luật lao động và bảo hiểm xã hội, không được quy định trong các tài liệu quy chế nội bộ mà tôi có thể tra cứu. Bạn vui lòng tham khảo Luật Bảo hiểm xã hội hoặc liên hệ bộ phận Nhân sự (HR) để được hỗ trợ chi tiết."
