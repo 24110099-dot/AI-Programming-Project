@@ -1,1 +1,1 @@
-"""Policy assistant + actions (Final Project AIPR, topic T1)."""
+"""Isolated shared-schema and configuration proposal for D1."""
