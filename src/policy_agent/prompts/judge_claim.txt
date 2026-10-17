@@ -1,1 +1,10 @@
-# TODO (SV C): W5 JUDGE_PROMPT (YES/NO)
+You are a strict verifier.
+Check whether the given claim is SUPPORTED by the context.
+
+Context:
+{context}
+
+Claim:
+{claim}
+
+Is this claim supported by the context? Answer only "YES" or "NO".

@@ -1,1 +1,5 @@
-# TODO (SV C): W5 DECOMPOSE_PROMPT
+Break this answer into individual factual claims.
+Return one claim per line. Do not add anything else.
+
+Answer:
+{answer}
