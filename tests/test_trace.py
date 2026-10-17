@@ -10,3 +10,11 @@ def test_jsonl_trace(tmp_path):
     assert [row["event"] for row in rows] == ["START", "STEP", "FINAL", "USAGE"]
     assert rows[1]["action"] == "search"
     assert rows[-1]["calls"] == 1
+
+
+def test_stream_print(capsys):
+    from policy_agent.agent.trace import stream_print
+    stream_print("hello stream", delay=0)
+    captured = capsys.readouterr()
+    assert captured.out == "hello stream\n"
+

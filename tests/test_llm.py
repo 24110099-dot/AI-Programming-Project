@@ -43,3 +43,22 @@ def test_call_llm_retries_on_429(tmp_path):
 def test_call_llm_requires_api_key(tmp_path):
     with pytest.raises(ValueError, match="GROQ_API_KEY"):
         call_llm([], Settings(tmp_path), Usage())
+
+
+def test_call_llm_stream(tmp_path):
+    chunks = [
+        NS(choices=[NS(delta=NS(content="hel"))]),
+        NS(choices=[NS(delta=NS(content="lo"))]),
+    ]
+    collected = []
+    res = call_llm(
+        [],
+        Settings(tmp_path),
+        Usage(),
+        adapter=lambda **kw: iter(chunks),
+        stream=True,
+        on_chunk=collected.append,
+    )
+    assert res == "hello"
+    assert collected == ["hel", "lo"]
+

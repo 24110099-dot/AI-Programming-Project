@@ -5,7 +5,7 @@ from groq import Groq, APIConnectionError, APIStatusError
 from policy_agent.models import Usage
 
 
-def call_llm(messages, settings, usage: Usage, *, adapter=None, timeout=30.0, max_attempts=3, sleep=time.sleep):
+def call_llm(messages, settings, usage: Usage, *, adapter=None, timeout=30.0, max_attempts=3, sleep=time.sleep, stream=False, on_chunk=None):
     if max_attempts < 1:
         raise ValueError("max_attempts must be positive")
     if timeout <= 0:
@@ -22,10 +22,34 @@ def call_llm(messages, settings, usage: Usage, *, adapter=None, timeout=30.0, ma
             timeout=timeout,
             max_attempts=max_attempts,
             sleep=sleep,
+            stream=stream,
+            on_chunk=on_chunk,
         )
     for attempt in range(1, max_attempts + 1):
         usage.calls += 1
         try:
+            if stream:
+                stream_resp = adapter(
+                    messages=messages,
+                    model=settings.model,
+                    temperature=0,
+                    timeout=timeout,
+                    stream=True,
+                )
+                full_content = ""
+                for chunk in stream_resp:
+                    if not getattr(chunk, "choices", None):
+                        continue
+                    delta = chunk.choices[0].delta
+                    delta_content = getattr(delta, "content", None)
+                    if delta_content:
+                        full_content += delta_content
+                        if on_chunk:
+                            on_chunk(delta_content)
+                if not full_content.strip():
+                    raise ValueError("Empty completion")
+                return full_content
+
             response = adapter(
                 messages=messages,
                 model=settings.model,

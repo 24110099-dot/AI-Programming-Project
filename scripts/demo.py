@@ -28,6 +28,9 @@ DEMO_QUESTIONS = [
 ]
 
 
+from policy_agent.agent.trace import stream_print
+
+
 def print_demo_result(title: str, trace) -> None:
     print("\n" + "=" * 76)
     print(f"DEMO CASE: {title}")
@@ -46,7 +49,9 @@ def print_demo_result(title: str, trace) -> None:
                 obs = obs[:240] + "..."
             print(f"    Observation : {obs}")
     print("-" * 76)
-    print(f"Final Answer : {trace.final_answer}")
+    sys.stdout.write("Final Answer : ")
+    sys.stdout.flush()
+    stream_print(trace.final_answer, delay=0.015)
     print(f"Cited Docs   : {trace.cited_doc_ids}")
     print(
         f"USAGE        : calls={trace.usage.calls}, "

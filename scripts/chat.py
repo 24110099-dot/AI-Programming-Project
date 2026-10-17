@@ -13,6 +13,9 @@ from policy_agent.llm.client import call_llm
 from policy_agent.agent.loop import run_agent
 
 
+from policy_agent.agent.trace import stream_print
+
+
 def print_run_trace(trace) -> None:
     print("\n" + "=" * 70)
     print(f"Question: {trace.question}")
@@ -30,7 +33,9 @@ def print_run_trace(trace) -> None:
                 obs_preview = obs_preview[:220] + "..."
             print(f"  Observation : {obs_preview}")
     print("-" * 70)
-    print(f"Final Answer  : {trace.final_answer}")
+    sys.stdout.write("Final Answer  : ")
+    sys.stdout.flush()
+    stream_print(trace.final_answer, delay=0.015)
     print(f"Cited Docs    : {trace.cited_doc_ids}")
     print(
         f"USAGE         : calls={trace.usage.calls}, "
