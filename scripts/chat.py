@@ -3,6 +3,11 @@ import json
 import sys
 from pathlib import Path
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 from policy_agent.config import load_settings
 from policy_agent.llm.client import call_llm
 from policy_agent.agent.loop import run_agent
