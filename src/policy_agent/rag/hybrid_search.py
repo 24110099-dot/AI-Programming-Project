@@ -3,10 +3,17 @@
 
 from rank_bm25 import BM25Okapi
 import numpy as np
-import sys
-sys.path.append(r"../w3")
-from vector_store import VectorStore, Document, DocumentChunk, embed_text, cosine_similarity
+import logging
 
+from policy_agent.rag.vector_store import (
+    VectorStore,
+    Document,
+    DocumentChunk,
+    embed_text,
+    cosine_similarity,
+)
+
+logger = logging.getLogger(__name__)
 def normalise_scores(scores: list[float]) -> list[float]:
     """Normalise scores to [0, 1] using min-max scaling."""
     if not scores:
@@ -40,9 +47,9 @@ def hybrid_search(
     """
     # BM25 scores (raw, unbounded)
     tokenized_query = query.lower().split()
-    print(f"Tokenized query: {tokenized_query}")
+    logger.debug("Tokenized query: %s", tokenized_query)
     bm25_scores = bm25_index.get_scores(tokenized_query)
-    print(f"BM25 scores: {bm25_scores}")
+    logger.debug("BM25 scores: %s", bm25_scores)
 
     # Vector scores (cosine similarity, bounded)
     query_vec = embed_text(query)
