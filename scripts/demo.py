@@ -81,7 +81,9 @@ async def run_demo(tool_client=None, provider=None, settings=None) -> list:
             return await run_demo(tool_client=mcp_client, provider=provider, settings=settings)
 
     traces = []
-    for title, question in DEMO_QUESTIONS:
+    for idx_q, (title, question) in enumerate(DEMO_QUESTIONS):
+        if idx_q > 0:
+            await asyncio.sleep(2.0)
         trace = await run_agent(question, tool_client, provider, settings)
         print_demo_result(title, trace)
         traces.append(trace)
